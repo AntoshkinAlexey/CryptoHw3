@@ -128,7 +128,6 @@ contract MultiSigWalletOptimizedTest is Test {
     }
 }
 
-
 contract MultiSigWalletTest is Test {
     MultiSigWallet wallet;
     address[] owners;

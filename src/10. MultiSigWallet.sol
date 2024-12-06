@@ -77,10 +77,10 @@ contract MultiSigWalletOptimized {
     }
 
     function confirmTransaction(uint256 transactionId)
-    public
-    onlyOwner
-    transactionExists(transactionId)
-    notConfirmed(transactionId)
+        public
+        onlyOwner
+        transactionExists(transactionId)
+        notConfirmed(transactionId)
     {
         Transaction storage temp = transactions[transactionId];
         confirmations[transactionId][msg.sender] = true;
@@ -94,10 +94,10 @@ contract MultiSigWalletOptimized {
     }
 
     function executeTransaction(uint256 transactionId)
-    public
-    onlyOwner
-    transactionExists(transactionId)
-    notExecuted(transactionId)
+        public
+        onlyOwner
+        transactionExists(transactionId)
+        notExecuted(transactionId)
     {
         Transaction storage temp = transactions[transactionId];
         if (temp.confirmationCount >= required) {
